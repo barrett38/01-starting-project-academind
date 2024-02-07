@@ -17,7 +17,10 @@ function App() {
     setUserInput((prevState) => {
       return {
         ...prevState,
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue,
+        /* added '+' to convert string to number -
+        without this, the event.target.value
+        cocantenates the numbers */
       };
     });
   }
